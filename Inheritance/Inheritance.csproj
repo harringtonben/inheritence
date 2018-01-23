@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pieces\Legs\Jeans.cs" />
+    <Compile Include="Pieces\Legs\LegBase.cs" />
     <Compile Include="Pieces\Legs\LegSize.cs" />
     <Compile Include="Pieces\Legs\Length.cs" />
     <Compile Include="Pieces\Legs\Shorts.cs" />

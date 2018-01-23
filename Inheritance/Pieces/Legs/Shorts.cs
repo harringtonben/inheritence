@@ -2,12 +2,9 @@
 
 namespace Inheritance.Pieces.Legs
 {
-    class Shorts
+    class Shorts : LegBase
     {
-        public int NumberOfPockets { get; set; }
-        public string Color { get; set; }
-        public LegSize Size { get; set; }
-        public string material { get; set; }
+        public string Material { get; set; }
         public Length Length { get; set; }
     }
 }
