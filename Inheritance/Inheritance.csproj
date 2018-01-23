@@ -42,11 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pieces\Legs\Jeans.cs" />
+    <Compile Include="Pieces\Legs\LegSize.cs" />
+    <Compile Include="Pieces\Legs\Length.cs" />
+    <Compile Include="Pieces\Legs\Shorts.cs" />
+    <Compile Include="Pieces\Legs\Skirt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
