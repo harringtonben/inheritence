@@ -75,7 +75,7 @@ namespace Inheritance
 
                 //if (leg is Skirt) boolean check
                 //{
-                    //var skirt = (Skirt) leg;
+                //var skirt = (Skirt) leg;
                 //}
 
                 //var skirt = leg as Skirt; 
@@ -84,13 +84,23 @@ namespace Inheritance
                 //    skirt.Material
                 //}
 
-                if (leg is Skirt skirt) //pattern matching
+                //if (leg is Skirt skirt) //pattern matching
+                //{
+                //    skirt.Material = "jeans";
+                //}
+
+                switch (leg) //where pattern matching will happen most often
                 {
-                    skirt.Material = "jeans";
+                    case Skirt s:
+                        Console.WriteLine($"It's a skirt made of {s.Material}");
+                        break;
+                    case Jeans j:
+                        Console.WriteLine($"It's {j.Color} jeans");
+                        break;
                 }
 
             }
-
+            Console.Read();
         }
     }
 }
