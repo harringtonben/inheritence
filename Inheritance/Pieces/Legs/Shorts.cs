@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 namespace Inheritance.Pieces.Legs
 {
@@ -6,5 +6,10 @@ namespace Inheritance.Pieces.Legs
     {
         public string Material { get; set; }
         public Length Length { get; set; }
+
+        public override void Jump(int howHigh)
+        {
+            Console.WriteLine($"Shorts Jumped {howHigh} feet in the air");
+        }
     }
 }

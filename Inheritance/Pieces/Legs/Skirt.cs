@@ -7,6 +7,11 @@ namespace Inheritance.Pieces.Legs
         public string Material { get; set; }
         public Length Length { get; set; }
 
+        public override void Jump(int howHigh)
+        {
+            Console.WriteLine($"Skirt jumped {howHigh} inches in the air");
+        }
+
         public override void Walk(int numberOfSteps) //overrides inheritance
         {
             if (Length == Length.StreetCorner)

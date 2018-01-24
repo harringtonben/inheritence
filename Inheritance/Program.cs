@@ -71,6 +71,7 @@ namespace Inheritance
             foreach (var leg in legs)
             {
                 leg.Walk(10);
+                leg.Jump(10);
 
                 //if (leg is Skirt) boolean check
                 //{
@@ -83,7 +84,7 @@ namespace Inheritance
                 //    skirt.Material
                 //}
 
-                if (leg is Skirt skirt)
+                if (leg is Skirt skirt) //pattern matching
                 {
                     skirt.Material = "jeans";
                 }

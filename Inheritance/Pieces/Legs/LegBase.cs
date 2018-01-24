@@ -12,6 +12,9 @@ namespace Inheritance.Pieces.Legs
         public string Color { get; set; }
         public LegSize Size { get; set; }
 
+        public abstract void Jump(int howHigh);
+
+
         public virtual void Walk(int numberOfSteps) //this is something that people who inherit from me can change if they want to
         {
             Console.WriteLine($"The {Size} legs wearing a {GetType().Name} took {numberOfSteps} steps.");
