@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Inheritance.Pieces.Legs
 {
-    interface IMove //an interface what a class should look like but not what it does
+    interface IMoveable //an interface what a class should look like but not what it does and is ALWAYS public
     {
+        int HowFarIMoved { get; }
+
         void Walk(int howManySteps);
         void Jump(int howHigh);
         void Run(int howFar);

@@ -2,10 +2,12 @@
 
 namespace Inheritance.Pieces.Legs
 {
-    class Shorts : LegBase, IMove //can implement as many interfaces as you would like
+    class Shorts : LegBase, IMoveable //can implement as many interfaces as you would like
     {
         public string Material { get; set; }
         public Length Length { get; set; }
+
+        public int HowFarIMoved { get; private set; }
 
         public override void Jump(int howHigh)
         {
@@ -14,7 +16,14 @@ namespace Inheritance.Pieces.Legs
 
         public void Run(int howFar)
         {
+            HowFarIMoved += howFar;
             Console.WriteLine($"Shorts ran {howFar} miles in the snow, both ways uphill.");
+        }
+
+        public override void Walk(int numberOfSteps)
+        {
+            HowFarIMoved += numberOfSteps;
+            base.Walk(numberOfSteps);
         }
     }
 
