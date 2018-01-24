@@ -4,6 +4,11 @@ namespace Inheritance.Pieces.Legs
 {
     class Skirt : LegBase, IMoveable
     {
+        //invariant example: things that are required to be able to construct a class
+        //public Skirt(string material)
+        //{
+        //    Material = material;
+        //}
         public string Material { get; set; }
         public Length Length { get; set; }
   
