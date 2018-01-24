@@ -58,7 +58,7 @@ namespace Inheritance
                 Length = Length.StreetCorner
             };
 
-            var legs = new List<LegBase>
+            var movers = new List<IMoveable>
             {
                 shorts,
                 skirt1,
@@ -68,13 +68,15 @@ namespace Inheritance
                 jeans3
             };
 
-            foreach (var leg in legs)
+            foreach (var mover in movers)
             {
-                leg.Walk(10);
+                mover.Walk(10);
+                mover.Jump(10);
+                mover.Run(15);
 
                 //if (leg is Skirt) boolean check
                 //{
-                    //var skirt = (Skirt) leg;
+                //var skirt = (Skirt) leg;
                 //}
 
                 //var skirt = leg as Skirt; 
@@ -83,13 +85,29 @@ namespace Inheritance
                 //    skirt.Material
                 //}
 
-                if (leg is Skirt skirt)
+                //if (leg is Skirt skirt) //pattern matching
+                //{
+                //    skirt.Material = "jeans";
+                //}
+
+                switch (mover) //where pattern matching will happen most often
                 {
-                    skirt.Material = "jeans";
+                    case Skirt s:
+                        Console.WriteLine($"It's a skirt made of {s.Material}");
+                        break;
+                    case Jeans j:
+                        Console.WriteLine($"It's {j.Color} jeans");
+                        j.HowFarIMoved = 2000;
+                        break;
+                    //case IMove m:
+                    //    m.Run(15);
+                    //    break; This would only work if the first 2 statements in the switch did not run, otherwise it would never make it out of here.
                 }
 
-            }
+                Console.WriteLine($"The {mover.GetType().Name} moved {mover.HowFarIMoved} units.");
 
+            }
+            Console.Read();
         }
     }
 }
