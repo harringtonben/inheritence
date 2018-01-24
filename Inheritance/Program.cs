@@ -58,7 +58,7 @@ namespace Inheritance
                 Length = Length.StreetCorner
             };
 
-            var movers = new List<IMove>
+            var movers = new List<LegBase>
             {
                 shorts,
                 skirt1,
@@ -98,6 +98,9 @@ namespace Inheritance
                     case Jeans j:
                         Console.WriteLine($"It's {j.Color} jeans");
                         break;
+                    //case IMove m:
+                    //    m.Run(15);
+                    //    break; This would only work if the first 2 statements in the switch did not run, otherwise it would never make it out of here.
                 }
 
             }
