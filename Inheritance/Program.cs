@@ -58,7 +58,7 @@ namespace Inheritance
                 Length = Length.StreetCorner
             };
 
-            var legs = new List<LegBase>
+            var movers = new List<IMove>
             {
                 shorts,
                 skirt1,
@@ -68,10 +68,11 @@ namespace Inheritance
                 jeans3
             };
 
-            foreach (var leg in legs)
+            foreach (var mover in movers)
             {
-                leg.Walk(10);
-                leg.Jump(10);
+                mover.Walk(10);
+                mover.Jump(10);
+                mover.Run(15);
 
                 //if (leg is Skirt) boolean check
                 //{
@@ -89,7 +90,7 @@ namespace Inheritance
                 //    skirt.Material = "jeans";
                 //}
 
-                switch (leg) //where pattern matching will happen most often
+                switch (mover) //where pattern matching will happen most often
                 {
                     case Skirt s:
                         Console.WriteLine($"It's a skirt made of {s.Material}");
