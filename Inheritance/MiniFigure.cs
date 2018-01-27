@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Inheritance.Pieces.Accessories;
 using Inheritance.Pieces.Heads;
 using Inheritance.Pieces.Legs;
 using Inheritance.Pieces.Torsos;
@@ -35,6 +36,12 @@ namespace Inheritance
                     Console.WriteLine($"{Name} wondered why he is wearing a {helmet.Color} helmet. He is just going on a walk");
                     break;
             }
+
+            foreach (var accessory in _torso.Accessories)
+            {
+
+            }
+
             _legs.Walk(numberofsteps);
         }
 
@@ -44,6 +51,13 @@ namespace Inheritance
             {
                 throw new ArgumentNullException(nameof(torso));
             }
+
+            _torso = torso;
+        }
+
+        public void Accesorize(AccessoryBase accessory)
+        {
+            _torso.Accessories.Add(accessory);
         }
     }
 }

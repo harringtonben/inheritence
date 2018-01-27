@@ -12,9 +12,4 @@ namespace Inheritance.Pieces.Torsos
         public bool BodyHair { get; set; }
         public int NumberOfNipples { get; set; }
     }
-
-    abstract class TorsoBase
-    {
-        public string Shirt { get; set; }
-    }
 }
