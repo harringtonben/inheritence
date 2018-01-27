@@ -12,21 +12,21 @@ namespace Inheritance
     class MiniFigure
     {
         public string Name { get; private set; }
-        public LegBase Legs { get; private set; }
-        public HeadBase Head { get; private set; }
-        public TorsoBase Torso { get; private set; }
+        LegBase _legs;
+        HeadBase _head;
+        TorsoBase _torso;
 
         public MiniFigure(LegBase legs, HeadBase head, TorsoBase torso, string name)
         {
-            Legs = legs;
-            Head = head;
-            Torso = Torso;
+            _legs = legs;
+            _head = head;
+            _torso = torso;
             Name = name;
         }
 
         public void Walk(int numberofsteps)
         {
-            switch (Head.HeadGear)
+            switch (_head.HeadGear)
             {
                 case Hair hair:
                     Console.WriteLine($"{Name} tossed his {hair.Length} {hair.Color} in the wind");
@@ -35,8 +35,15 @@ namespace Inheritance
                     Console.WriteLine($"{Name} wondered why he is wearing a {helmet.Color} helmet. He is just going on a walk");
                     break;
             }
-            Console.WriteLine($"{Name} ");
-            Legs.Walk(numberofsteps);
+            _legs.Walk(numberofsteps);
+        }
+
+        public void SwapTorso(TorsoBase torso)
+        {
+            if (torso == null)
+            {
+                throw new ArgumentNullException(nameof(torso));
+            }
         }
     }
 }

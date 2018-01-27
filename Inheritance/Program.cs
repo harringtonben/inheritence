@@ -13,9 +13,34 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            var dademmet = new MiniFigure(new Jeans(), new Emmet(), new DadBod(), "Emmet");
+            var jeans = new Jeans
+            {
+                Color = "Black",
+                Size = LegSize.Adult,
+                NumberOfPockets = 4
+            };
+
+            var head = new Emmet
+            {
+                EyeColor = "Blue",
+                Happy = true,
+                HeadGear = new Hair { Color = "Blonde", Length = "Long" }
+            };
+
+            var body = new DadBod
+            {
+                BeerBelly = true,
+                BodyHair = true,
+                NumberOfNipples = 2,
+                Shirt = "Hawaiin"
+
+            };
+
+            var dademmet = new MiniFigure(jeans, head, body, "Emmet");
 
             dademmet.Walk(50);
+
+            dademmet.SwapTorso(null);
 
             Console.ReadLine();
         }
